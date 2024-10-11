@@ -1,0 +1,25 @@
+﻿<Window x:Class="ex_4.MainWindow"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Data Filter App" Height="400" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Фильтр по ключевому слову -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Фильтр по ключевому слову:" VerticalAlignment="Center" Margin="0,0,10,0" />
+            <TextBox x:Name="KeywordTextBox" Width="200" Margin="0,0,10,0" />
+            <Button Content="Применить фильтр" Click="OnApplyKeywordFilter" Width="120" />
+        </StackPanel>
+
+        <ListBox x:Name="DataListBox" Grid.Row="1" />
+
+
+        <!-- Кнопка для сброса фильтра -->
+        <Button Content="Сбросить фильтр" Click="OnResetFilter" Width="120" Grid.Row="2" VerticalAlignment="Bottom" />
+    </Grid>
+</Window>

@@ -1,0 +1,34 @@
+﻿<Window x:Class="уч_5.MainWindow"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sorting App" Height="400" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Ввод числовых данных -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="Введите числа (через запятую):" VerticalAlignment="Center" Margin="0,0,10,0" />
+            <TextBox x:Name="NumbersTextBox" Width="300" />
+        </StackPanel>
+
+        <!-- Кнопки выбора метода сортировки -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,10">
+            <Button Content="Сортировка пузырьком" Click="OnBubbleSort" Width="150" Margin="0,0,10,0" />
+            <Button Content="Быстрая сортировка" Click="OnQuickSort" Width="150" />
+        </StackPanel>
+
+        <!-- Заголовок для результата сортировки -->
+        <TextBlock Text="Результат сортировки:" Grid.Row="2" Margin="0,0,0,5" />
+
+        <!-- Результат сортировки -->
+        <TextBox x:Name="SortedNumbersTextBox" Grid.Row="3" IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
+    </Grid>
+</Window>
